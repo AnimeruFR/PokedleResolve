@@ -3,12 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>PokeIdle Resolver</title>
 </head>
 <body>
+    <div id="divType1">
+        <label for="type1">Enter the first type of the Pokémon: </label>
+        <input type="text" placeholder="type 1" id="type1Value" name="type1">
+    </div>
+    <div id="divType2">
+        <label for="type2">Enter the second type of the Pokémon: </label>
+        <input type="text" placeholder="type 2" id="type2Value" name="type2">
+    </div>
     <div id="divColor">
         <label for="color">Enter the color of the Pokémon: </label>
         <input type="text" placeholder="color" id="colorValue" name="color">
+    </div>
+    <div id="divWeight">
+        <label for="weight">Enter the weight of the Pokémon: </label>
+        <input type="text" placeholder="weight" id="weightValue" name="weight">
+    </div>
+    <div id="divHeight">
+        <label for="height">Enter the height of the Pokémon: </label>
+        <input type="text" placeholder="height" id="heightValue" name="height">
     </div>
     <input type="submit" value="Send" id="submitButton"/>
     <p id="p"></p>
