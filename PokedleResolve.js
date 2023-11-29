@@ -14,17 +14,25 @@ submitButton.addEventListener("click", async function () {
 async function test(indice) {
     try {
         let responseJson = await fetch(`https://pokeapi.co/api/v2/pokemon/${indice}`).then(response => response.json());
-        let weight = responseJson.weight);
-        console.log(responseJson.name);
-        console.log("taille = " + responseJson.height);
-        let liveArea = await test2(responseJson)
-        let color = await test3(responseJson);
+        let type1 = responseJson.types[0].type.name
+        if(responseJson.types[1] != undefined){
+            let type2 = responseJson.types[1].type.name
+        } else {
+            let type2 = "Nothing"
+        }
+        let liveArea = await askLiving(responseJson)
+        let color = await askColor(responseJson);
+        //stade d'évolution
+        let weight = responseJson.weight;
+        let height = responseJson.height;
+        console.log(responseJson)
+        //console.log(responseJson.name);
     } catch (error) {
         console.error(error);
     }
 }
 
-async function test2(file) {
+async function askLiving(file) {
     try {
         let area = [];
         let responseJson2 = await fetch(file.location_area_encounters).then(response => response.json());
@@ -41,7 +49,7 @@ async function test2(file) {
     }
 }
 
-async function test3(file) {
+async function askColor(file) {
     try {
         let responseJson3 = await fetch(file.species.url).then(response => response.json());
         console.log(responseJson3.color.name);
